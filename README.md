@@ -6,19 +6,21 @@ Exercícios de código para o aprendizado da linguagem JavaScript.
 
 ## Instruções
 
-Clone o projeto na sua máquina local.
-
-Instale o Jest para executar os testes unitários:
+1. [Acesse o github classroom](https://classroom.github.com/a/QYmlNgh0) para ganhar acesso a este repositório;
+2. Após o projeto ser copiado para seu usuário pessoal, clone o projeto na sua máquina local;
+3. Instale o Jest para executar os testes unitários:
 
 ```sh
 npm install -g jest
 ```
 
-Instale as dependências do projeto executando o comando `npm install`:
+4. Instale as dependências do projeto executando o comando `npm install`:
 
 ```sh
 npm install
 ```
+
+## Exercícios
 
 Para resolver os exercícios, basta implementar o código onde existir o comentário `// IMPLEMENTE` ou colocar a resposta no lugar da constante `RESPOSTA`.
 
