@@ -31,7 +31,7 @@ function hello(name) {
 
 describe('hello', function() {
   it('deve retornar Hello, Alan!', function() {
-    expect(hello('Alan')).toBe('Hello, Alan!');
+    expect(hello('Alan')).toEqual('Hello, Alan!');
   });
 });
 ```
@@ -45,7 +45,7 @@ function hello(name) {
 
 describe('hello', function() {
   it('deve retornar Hello, Alan!', function() {
-    expect(hello('Alan')).toBe('Hello, Alan!');
+    expect(hello('Alan')).toEqual('Hello, Alan!');
   });
 });
 ```
