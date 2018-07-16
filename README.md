@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bootcamp-joinville/javascript-katas-part-one.svg?branch=master)](https://travis-ci.org/bootcamp-joinville/javascript-katas-part-one)
+
 # Bootcamp Joinville - JavaScript Katas
 
 Exercícios de código para o aprendizado da linguagem JavaScript.
