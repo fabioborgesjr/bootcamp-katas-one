@@ -8,4 +8,4 @@ As bibliotecas usadas são importadas no arquivo `index.html` e o código javasc
 
 A imagem abaixo mostra o resultado final esperado:
 
-![receita/assets/img/demo.png](assets/demo.png)
+![receita/assets/img/demo.png](receita/assets/img/demo.png)
