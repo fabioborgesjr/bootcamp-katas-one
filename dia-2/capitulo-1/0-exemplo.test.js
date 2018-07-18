@@ -1,14 +1,13 @@
 function sempreUm(x) {
-  return 1;
+  return x;
 }
 
-// REVISAR
 describe("aprendendo a escrever testes com jest, sempreUm", function () {
-  it("sempreUm deve retornar 1 quando recebe 3 como argumento", function () {
+  it("sempreUm deve retornar 3 quando recebe 3 como argumento", function () {
     expect(sempreUm(3)).toEqual(3);
   });
 
-  it("sempreUm deve retornar 1 quando recebe 2 como argumento", function () {
+  it("sempreUm deve retornar 2 quando recebe 2 como argumento", function () {
     expect(sempreUm(2)).toEqual(2);
   });
 
@@ -18,7 +17,7 @@ describe("aprendendo a escrever testes com jest, sempreUm", function () {
 });
 
 function hello(name) {
-  // IMPLEMENTE
+  return `Hello, ${name}!`
 }
 
 describe("hello", function () {
