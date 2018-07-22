@@ -17,9 +17,35 @@
 // funciona para qualquer tamanho, retornando uma grade com a largura e altura fornecida.
 
 function imprimirXadrez(size) {
-  var board = "";
+  let board = ""
+  let par = false
 
-  // IMPLEMENTE
+  for (let i = 0; i < size; i++) {
+
+    if (i % 2 == 0) {
+      board = board + "_"
+      par = true
+    } else {
+      board = board + "#"
+      par = false
+    }
+
+    for (let j = 0; j < size - 1; j++) {
+      if (par) {
+        if (j % 2 == 0)
+          board = board + "#"
+        else
+          board = board + "_"
+      } else {
+        if (j % 2 == 0)
+          board = board + "_"
+        else
+          board = board + "#"
+      }
+    }
+
+    board = board + "\n"
+  }
 
   console.log(board);
 }
