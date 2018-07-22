@@ -1,3 +1,5 @@
+import { Z_VERSION_ERROR } from "zlib";
+
 // A introdução desse livro mencionou a seguinte maneira como uma boa alternativa para somar um
 // intervalo de números:
 //
@@ -43,21 +45,33 @@
 // for menor do que o valor de início.Dessa forma, ao invés de ficar preso em um loop infinito, range(5, 2) retorna algo relevante.
 
 function range(start, end, step = null) {
-  if (step ==null) {
+  if (step == null) {
     step = start < end ? 1 : -1
   }
 
   var array = [];
 
-  // IMPLEMENTE
+  if (step < 0) {
+    for (let i = start; i >= end; i = i + step) {
+      array.push(i)
+    }
+  } else {
+    for (let i = start; i <= end; i = i + step) {
+      array.push(i)
+    }
+  }
+
 
   return array;
 }
 
 function sum(array) {
+  console.log(array)
+
   var total = 0;
 
-  // IMPLEMENTE
+  for (let n = 0; n < array.length; n++)
+    total = total + parseInt(array[n])
 
   return total;
 }

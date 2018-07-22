@@ -12,12 +12,12 @@ describe("Objects", function () {
     });
 
     it("should confirm objects are collections of properties", function () {
-      expect(descricao.nome).toBe(RESPOSTA);
+      expect(descricao.nome).toBe("Joker");
     });
 
     it("should confirm that properties are case sensitive", function () {
-      expect(descricao.sobrenome).toBe(RESPOSTA);
-      expect(descricao.sobrenome).toBe(RESPOSTA);
+      expect(descricao.sobrenome).toBe("Harley");
+      expect(descricao.sobrenome).not.toBe("harley");
     });
   });
 
@@ -32,7 +32,8 @@ describe("Objects", function () {
     };
 
     var battleCry = descricao.battleCry(4);
-    expect(RESPOSTA).toMatch(battleCry);
+    expect("They are " + descricao.henchman + " and the" +
+      Array(5).join(" " + descricao.nome)).toMatch(battleCry);
   });
 
   it("should confirm that when a function is attached to an object, \"this\" refers to the object", function () {
@@ -47,11 +48,11 @@ describe("Objects", function () {
       }
     };
 
-    expect(currentYear).toBe(RESPOSTA);
-    expect(descricao.calculateAge()).toBe(RESPOSTA);
+    expect(currentYear).toBe(2018);
+    expect(descricao.calculateAge()).toBe(48);
   });
 
-  describe(""in" keyword", function () {
+  describe("in keyword", function () {
     var descricao;
     beforeEach(function () {
       descricao = {
@@ -64,14 +65,14 @@ describe("Objects", function () {
     it("should have the bomb", function () {
       var hasBomb = "theBomb" in descricao;
 
-      expect(hasBomb).toBe(RESPOSTA);
+      expect(hasBomb).toBe(true);
     });
 
     it("should not have the detonator however", function () {
 
       var hasDetonator = "theDetonator" in descricao;
 
-      expect(hasDetonator).toBe(RESPOSTA);
+      expect(hasDetonator).toBe(false);
     });
   });
 
@@ -81,15 +82,14 @@ describe("Objects", function () {
       henchman: "Agent Smith"
     };
 
-    expect("secretary" in descricao).toBe(RESPOSTA);
+    expect("secretary" in descricao).toBe(false);
 
     descricao.secretary = "Agent Smith";
-    expect("secretary" in descricao).toBe(RESPOSTA);
+    expect("secretary" in descricao).toBe(true);
 
     delete descricao.henchman;
-    expect("henchman" in descricao).toBe(RESPOSTA);
+    expect("henchman" in descricao).toBe(false);
   });
-
 
   it("should use prototype to add to all objects", function () {
     function Circle(radius) {
@@ -100,14 +100,14 @@ describe("Objects", function () {
     var colouredCircle = new Circle(5);
     colouredCircle.colour = "red";
 
-    expect(simpleCircle.colour).toBe(RESPOSTA);
-    expect(colouredCircle.colour).toBe(RESPOSTA);
+    expect(simpleCircle.colour).toBe(undefined);
+    expect(colouredCircle.colour).toBe("red");
 
     Circle.prototype.describe = function () {
       return "This circle has a radius of: " + this.radius;
     };
 
-    expect(simpleCircle.describe()).toBe(RESPOSTA);
-    expect(colouredCircle.describe()).toBe(RESPOSTA);
+    expect(simpleCircle.describe()).toBe("This circle has a radius of: 10");
+    expect(colouredCircle.describe()).toBe("This circle has a radius of: 5");
   });
 });

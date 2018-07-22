@@ -3,7 +3,19 @@
 function arrayToList(array) {
   var list = null;
 
-  // IMPLEMEMNTE
+  for (let i = array.length - 1; i >= 0; i--) {
+    if (list === null) {
+      list = {
+        value: array[i],
+        rest: null
+      }
+    } else {
+      list = {
+        value: array[i],
+        rest: list
+      }
+    }
+  }
 
   return list;
 }
@@ -11,24 +23,43 @@ function arrayToList(array) {
 function listToArray(list) {
   var array = [];
 
-  // IMPLEMEMNTE
+  for (let i = list; i; i = i.rest)
+    array.push(i.value)
 
   return array;
 }
 
 function prepend(value, list) {
-  // IMPLEMEMNTE
+  if (list === null) {
+    list = {
+      value: value,
+      rest: null
+    }
+  } else {
+    list = {
+      value: value,
+      rest: list
+    }
+  }
+
+  return list;
 }
 
 function nth(list, n) {
-  // IMPLEMEMNTE
+  let cont = 0;
+  for (let i = list; i; i = i.rest) {
+    if (cont == n)
+      return i.value
+    else
+      cont++
+  }
 }
 
 // TESTES
 
 describe("arrayToList", function () {
   it("recebe um array como parâmetro e retorna uma lista", function () {
-    expect(arrayToList([10, 20])).toEqual({value: 10, rest: {value: 20, rest: null}});
+    expect(arrayToList([10, 20])).toEqual({ value: 10, rest: { value: 20, rest: null } });
   });
 });
 
@@ -39,7 +70,7 @@ describe("listToArray", function () {
 });
 describe("prepend", function () {
   it("adiciona um valor no começo da lista", function () {
-    expect(prepend(10, prepend(20, null))).toEqual({value: 10, rest: {value: 20, rest: null}});
+    expect(prepend(10, prepend(20, null))).toEqual({ value: 10, rest: { value: 20, rest: null } });
   });
 });
 describe("nth", function () {
