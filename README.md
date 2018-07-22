@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bootcamp-joinville/katas-part-one.svg?branch=master)](https://travis-ci.org/bootcamp-joinville/katas-part-one)
+[![Build Status](https://travis-ci.org/bootcamp-joinville/katas-part-one-salazenas.svg?branch=master)](https://travis-ci.org/bootcamp-joinville/katas-part-one-salazenas)
 
 # Bootcamp Joinville - JavaScript Katas
 
