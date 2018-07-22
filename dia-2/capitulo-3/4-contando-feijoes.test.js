@@ -29,13 +29,16 @@
 function countChar(string, ch) {
   let counted = 0;
 
-  // IMPLEMENTE
+  for (let i = 0; i < string.length; i++) {
+    if (string.charAt(i) == ch)
+      counted++
+  }
 
   return counted;
 }
 
 function countBs(string) {
-  // IMPLEMENTE
+  return countChar(string, "B")
 }
 
 // TESTES

@@ -8,10 +8,10 @@
 // // → -10
 
 function min(a, b) {
-  // IMPLEMENTE
+  if (a < b)
+    return a
+  else return b
 }
-
-// TESTES
 
 describe("Mínimo", function () {
   it("Ao receber 0 e 10 como parâmetros, retorna 0", function () {

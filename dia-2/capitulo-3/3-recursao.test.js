@@ -20,7 +20,23 @@
 // // → ??
 
 function isEven(n) {
-  // IMPLEMENTE
+
+  let result;
+
+  function isPair(n) {
+    if (n == 0) {
+      result = true
+    } else if (n == 1 || n <= 0) {
+      result = false
+    } else {
+      isPair(n - 2)
+    }
+  }
+
+  isPair(n)
+  
+  return result
+
 }
 
 // TESTES
